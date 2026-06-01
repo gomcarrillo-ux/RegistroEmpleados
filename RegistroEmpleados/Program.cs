@@ -11,6 +11,7 @@ void agregarEmpleado(int pos)
     empleados[pos].salario = double.Parse(Console.ReadLine()!);
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("Registro guardado exitosamente");
+    Console.ReadKey();
     Console.ResetColor();
 }
 
@@ -22,13 +23,17 @@ void mostrarDatos(int pos)
         Console.WriteLine($"Nombre: {empleados[i].nombres} \nApellidos: {empleados[i].apellidos} \nCargo: {empleados[i].cargo} \nSalario: {empleados[i].salario}");
     }
     Console.WriteLine("Registros mostrados exitosamente");
+    Console.ReadKey();
 }
 
 int menu()
 {
-        Console.WriteLine("1. Agregar \n2. Mostrar \n3. Guardar \n4. Salir \nDigite su opción: ");
-        int op = int.Parse(Console.ReadLine()!);
-        return op;
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("1. Agregar \n2. Mostrar \n3. Guardar \n4. Salir \nDigite su opción: ");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    int op = int.Parse(Console.ReadLine()!);
+    Console.ResetColor();
+    return op;
 }
 
 void guardarEmpleados(int pos)
@@ -40,6 +45,7 @@ StreamWriter archivo = new StreamWriter("C:\\semana12\\Empleados.csv");
     }
     archivo.Close();
     Console.WriteLine("Registros guardados.");
+    Console.ReadKey();
 }
     int main()
     {
