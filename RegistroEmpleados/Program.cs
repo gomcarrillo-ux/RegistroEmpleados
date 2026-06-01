@@ -50,6 +50,12 @@ StreamWriter archivo = new StreamWriter("C:\\semana12\\Empleados.csv");
     int main()
     {
         int op = 0, i = 0;
+    Console.Write("Cargando");
+    for(int j = 0; j < 10; j++)
+    {
+        Thread.Sleep(1000);
+        Console.Write(".");
+    }
 
     do
     {
